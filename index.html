@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #f8fafc;
+      --primary: #3b82f6;
+      --secondary: #f43f5e;
+      --highlight: #22d3ee;
+      --card-bg: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    nav {
+      background: var(--card-bg);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      transition: 0.3s;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--highlight);
+      text-align: center;
+    }
+
+    #about p, #contact p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .skills ul, .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills li, .project {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .skills li:hover, .project:hover {
+      transform: scale(1.05);
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .project h3 {
+      color: var(--highlight);
+      margin-bottom: 0.5rem;
+    }
+
+    .project a {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    footer {
+      background: var(--card-bg);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dev Shah</h1>
+    <p>Creative Web Developer & Designer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a developer who crafts clean, responsive, and engaging websites. I enjoy transforming creative ideas into reality through code.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Git</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>Modern personal portfolio site using HTML, CSS, JS</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project">
+        <h3>To-Do App</h3>
+        <p>A simple React-based task manager</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: devshah23112004@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/yourusername" style="color: var(--highlight)">github.com/yourusername</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll("nav a").forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute("href"));
+        section.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
